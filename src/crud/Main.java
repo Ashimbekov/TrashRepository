@@ -7,5 +7,7 @@ public class Main {
         DbFunctions db = new DbFunctions();
         Connection conn = db.connect_to_db("tutdb", "postgres", "nurdaulet");
         db.createTable(conn, "employee");
+        db.insert_row(conn, "employee", "Nurdaulet", "KZ");
+
     }
 }

@@ -32,4 +32,16 @@ public class DbFunctions {
             System.out.println(e);
         }
     }
+
+    public void insert_row(Connection conn, String table_name, String name, String address){
+        Statement stmt;
+        try {
+            String q = String.format("insert into %s(name, address) values('%s','%s')", table_name, name, address);
+            stmt = conn.createStatement();
+            stmt.executeUpdate(q);
+            System.out.println("Table inserted");
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }
